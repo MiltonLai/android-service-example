@@ -43,9 +43,9 @@ public class DaemonService extends Service implements HttpAsyncCallback {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Map<String, String> map = new HashMap<>();
-        map.put("phone", "13810291102");
+        map.put("phone", "13800138000");
         HttpAsyncTask task = new HttpAsyncTask(HttpAsyncTask.formDataToString(map, "UTF-8"), HttpAsyncTask.METHOD_POST, "UTF-8", 0, this);
-        task.execute("https://app.yihuicai.cn/common/bootup_check.json");
+        task.execute("https://www.toutiao.com/api/pc/realtime_news/");
         //new DaemonThread("").start();
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         long triggerAtTime = SystemClock.elapsedRealtime() + 5 * 1000;
